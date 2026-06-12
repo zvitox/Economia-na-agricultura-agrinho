@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroEconomia | Inteligência e Dados do Campo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-wheat-awn"></i> Agro<span>Economia</span>
+        </div>
+        <nav>
+            <a href="#" class="nav-link active" data-page="home">Início</a>
+            <a href="#" class="nav-link" data-page="dados">Dados & Gráficos</a>
+            <a href="#" class="nav-link" data-page="midia">Mídia & Análises</a>
+            <a href="#" class="nav-link" data-page="calculadora">Simulador</a>
+        </nav>
+    </header>
+
+    <main id="content">
+        
+        <section id="home" class="page active">
+            <div class="hero">
+                <h1>O Motor Econômico do País</h1>
+                <p>Análises profundas, indicadores em tempo real e o impacto financeiro do agronegócio no PIB global.</p>
+                <button onclick="switchPage('dados')" class="btn-primary">Ver Indicadores</button>
+            </div>
+
+            <div class="cards-macro">
+                <div class="card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Participação no PIB</h3>
+                    <p class="numero">~25%</p>
+                    <p>Do Produto Interno Bruto total é gerado pela cadeia do agro.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Exportações</h3>
+                    <p class="numero">US$ 160B+</p>
+                    <p>Recordes anuais em exportações de soja, carne e celulose.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>Empregos</h3>
+                    <p class="numero">1 de cada 3</p>
+                    <p>Trabalhadores brasileiros estão ligados direta ou indiretamente ao setor.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dados" class="page">
+            <h2>Indicadores Econômicos e Projeções</h2>
+            <p>Acompanhe a evolução do faturamento e a distribuição das principais commodities.</p>
+            
+            <div class="grid-graficos">
+                <div class="chart-container">
+                    <h3>Crescimento do PIB do Agronegócio (Em Bilhões R$)</h3>
+                    <canvas id="pibChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Participação por Cultura nas Exportações</h3>
+                    <canvas id="pizzaChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="midia" class="page">
+            <h2>Análises em Vídeo e Relatórios</h2>
+            <p>Entrevistas com economistas e projeções de mercado para a safra atual.</p>
+            
+            <div class="media-container">
+                <div class="video-placeholder">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4>Perspectivas para o Mercado de Commodities 2026</h4>
+                </div>
+                <div class="artigos">
+                    <h3>Últimas Notícias</h3>
+                    <ul>
+                        <li><strong>[08/06]</strong> Superávit comercial do agro compensa queda em outros setores.</li>
+                        <li><strong>[01/06]</strong> Crédito rural: Novas taxas do Plano Safra movimentam o mercado.</li>
+                        <li><strong>[25/05]</strong> Tecnologia no campo reduz custos de produção em até 15%.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="page">
+            <h2>Simulador de Lucratividade Estimada</h2>
+            <p>Insira os dados da sua cultura para calcular uma estimativa de receita bruta.</p>
+            
+            <div class="form-simulador">
+                <div class="input-group">
+                    <label for="cultura">Cultura:</label>
+                    <select id="cultura">
+                        <option value="soja">Soja (Saca 60kg)</option>
+                        <option value="milho">Milho (Saca 60kg)</option>
+                        <option value="algodao">Algodão (Arroba)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="area">Área Plantada (Hectares):</label>
+                    <input type="number" id="area" value="100">
+                </div>
+                <div class="input-group">
+                    <label for="produtividade">Produtividade Média por Hectare:</label>
+                    <input type="number" id="produtividade" value="60">
+                </div>
+                <button onclick="calcularRetorno()" class="btn-primary">Calcular Estimativa</button>
+
+                <div id="resultado" class="resultado-box">
+                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroEconomia Dashboard. Desenvolvido para portfólio GitHub.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
