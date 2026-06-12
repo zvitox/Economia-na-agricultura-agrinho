@@ -3,124 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroEconomia | Inteligência e Dados do Campo</title>
+    <title>AgroIntel | Business Intelligence & Economia</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker__item">SOJA (CME) <span class="up"><i class="fa-solid fa-caret-up"></i> +1.45%</span></div>
+            <div class="ticker__item">MILHO (B3) <span class="down"><i class="fa-solid fa-caret-down"></i> -0.32%</span></div>
+            <div class="ticker__item">BOI GORDO (B3) <span class="up"><i class="fa-solid fa-caret-up"></i> +0.78%</span></div>
+            <div class="ticker__item">CAFÉ ARÁBICA <span class="up"><i class="fa-solid fa-caret-up"></i> +2.10%</span></div>
+            <div class="ticker__item">DÓLAR COMPRA <span class="down"><i class="fa-solid fa-caret-down"></i> -0.15%</span></div>
+            <div class="ticker__item">UREIA (FERTILIZANTE) <span class="down"><i class="fa-solid fa-caret-down"></i> -1.12%</span></div>
+        </div>
+    </div>
+
     <header>
         <div class="logo">
-            <i class="fa-solid fa-wheat-awn"></i> Agro<span>Economia</span>
+            <i class="fa-solid fa-chart-pie-notch"></i> AGRO<span>INTEL</span>
         </div>
         <nav>
-            <a href="#" class="nav-link active" data-page="home">Início</a>
-            <a href="#" class="nav-link" data-page="dados">Dados & Gráficos</a>
-            <a href="#" class="nav-link" data-page="midia">Mídia & Análises</a>
-            <a href="#" class="nav-link" data-page="calculadora">Simulador</a>
+            <a href="#" class="nav-link active" data-page="home"><i class="fa-solid fa-house"></i> Overview</a>
+            <a href="#" class="nav-link" data-page="dados"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+            <a href="#" class="nav-link" data-page="midia"><i class="fa-solid fa-newspaper"></i> Inteligência</a>
+            <a href="#" class="nav-link" data-page="calculadora"><i class="fa-solid fa-calculator"></i> Simulador ROI</a>
         </nav>
     </header>
 
     <main id="content">
         
         <section id="home" class="page active">
-            <div class="hero">
-                <h1>O Motor Econômico do País</h1>
-                <p>Análises profundas, indicadores em tempo real e o impacto financeiro do agronegócio no PIB global.</p>
-                <button onclick="switchPage('dados')" class="btn-primary">Ver Indicadores</button>
+            <div class="hero-premium">
+                <div class="hero-text">
+                    <span class="badge">Relatório Macro 2026</span>
+                    <h1>Inteligência Econômica para o Agronegócio Global</h1>
+                    <p>Monitore volatilidade, projeções de safra e fluxos cambiais que moldam a cadeia de suprimentos mais vital do planeta.</p>
+                    <div class="hero-actions">
+                        <button onclick="switchPage('dados')" class="btn-glow">Acessar Terminal de Dados</button>
+                        <button onclick="switchPage('calculadora')" class="btn-outline">Simular Custos</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="cards-macro">
-                <div class="card">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <h3>Participação no PIB</h3>
-                    <p class="numero">~25%</p>
-                    <p>Do Produto Interno Bruto total é gerado pela cadeia do agro.</p>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span>VGV DO AGRONEGÓCIO</span>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                    <div class="kpi-value">R$ 2.62 Tri</div>
+                    <div class="kpi-sub green"><i class="fa-solid fa-arrow-trend-up"></i> +4.2% vs ano anterior</div>
                 </div>
-                <div class="card">
-                    <i class="fa-solid fa-globe"></i>
-                    <h3>Exportações</h3>
-                    <p class="numero">US$ 160B+</p>
-                    <p>Recordes anuais em exportações de soja, carne e celulose.</p>
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span>SALDO BALANÇA COMERCIAL</span>
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div class="kpi-value">US$ 98.4 Bi</div>
+                    <div class="kpi-sub green"><i class="fa-solid fa-arrow-trend-up"></i> Recorde histórico</div>
                 </div>
-                <div class="card">
-                    <i class="fa-solid fa-users"></i>
-                    <h3>Empregos</h3>
-                    <p class="numero">1 de cada 3</p>
-                    <p>Trabalhadores brasileiros estão ligados direta ou indiretamente ao setor.</p>
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span>ÍNDICE DE CUSTO DE PRODUÇÃO</span>
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <div class="kpi-value">142.8 pts</div>
+                    <div class="kpi-sub red"><i class="fa-solid fa-arrow-trend-down"></i> -1.8% deflação em insumos</div>
                 </div>
             </div>
         </section>
 
         <section id="dados" class="page">
-            <h2>Indicadores Econômicos e Projeções</h2>
-            <p>Acompanhe a evolução do faturamento e a distribuição das principais commodities.</p>
+            <div class="section-title">
+                <h2>Terminal de Indicadores Macroeconômicos</h2>
+                <p>Dados consolidados da balança comercial e projeções analíticas de mercado.</p>
+            </div>
             
-            <div class="grid-graficos">
-                <div class="chart-container">
-                    <h3>Crescimento do PIB do Agronegócio (Em Bilhões R$)</h3>
-                    <canvas id="pibChart"></canvas>
+            <div class="grid-charts">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Evolução da Receita Líquida e Margem Operacional</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="pibChartComplexo"></canvas>
+                    </div>
                 </div>
-                <div class="chart-container">
-                    <h3>Participação por Cultura nas Exportações</h3>
-                    <canvas id="pizzaChart"></canvas>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Destino das Exportações de Commodities (Market Share)</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="exportChartComplexo"></canvas>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="midia" class="page">
-            <h2>Análises em Vídeo e Relatórios</h2>
-            <p>Entrevistas com economistas e projeções de mercado para a safra atual.</p>
+            <div class="section-title">
+                <h2>Painel de Análises & Geopolítica</h2>
+                <p>O impacto das decisões globais nos preços do produtor.</p>
+            </div>
             
-            <div class="media-container">
-                <div class="video-placeholder">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <h4>Perspectivas para o Mercado de Commodities 2026</h4>
+            <div class="intel-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="tag-live">Exclusivo</span>
+                        <h3>Impactos do Clima Global na Safra Sul-Americana</h3>
+                        <p>Analistas discutem as tendências climáticas para os próximos trimestres e o impacto direto nos preços da Bolsa de Chicago.</p>
+                    </div>
                 </div>
-                <div class="artigos">
-                    <h3>Últimas Notícias</h3>
-                    <ul>
-                        <li><strong>[08/06]</strong> Superávit comercial do agro compensa queda em outros setores.</li>
-                        <li><strong>[01/06]</strong> Crédito rural: Novas taxas do Plano Safra movimentam o mercado.</li>
-                        <li><strong>[25/05]</strong> Tecnologia no campo reduz custos de produção em até 15%.</li>
-                    </ul>
+
+                <div class="feed-noticias">
+                    <h3>Análises Técnicas Rápidas</h3>
+                    <div class="feed-item">
+                        <span class="feed-time">Há 15 min</span>
+                        <h4>Fertilizantes: Estoques portuários elevados pressionam preços para baixo no curto prazo.</h4>
+                    </div>
+                    <div class="feed-item">
+                        <span class="feed-time">Há 2 horas</span>
+                        <h4>Frete Rodoviário: Alta do Diesel projeta aumento de 4% no custo logístico do escoamento.</h4>
+                    </div>
+                    <div class="feed-item">
+                        <span class="feed-time">Ontem</span>
+                        <h4>Crédito Sustentável: Fundos verdes captam R$ 5B destinados a propriedades carbono zero.</h4>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="calculadora" class="page">
-            <h2>Simulador de Lucratividade Estimada</h2>
-            <p>Insira os dados da sua cultura para calcular uma estimativa de receita bruta.</p>
+            <div class="section-title">
+                <h2>Simulador Avançado de Margem Operacional</h2>
+                <p>Calcule a viabilidade financeira e o ponto de equilíbrio (breakeven) da sua operação.</p>
+            </div>
             
-            <div class="form-simulador">
-                <div class="input-group">
-                    <label for="cultura">Cultura:</label>
-                    <select id="cultura">
-                        <option value="soja">Soja (Saca 60kg)</option>
-                        <option value="milho">Milho (Saca 60kg)</option>
-                        <option value="algodao">Algodão (Arroba)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="area">Área Plantada (Hectares):</label>
-                    <input type="number" id="area" value="100">
-                </div>
-                <div class="input-group">
-                    <label for="produtividade">Produtividade Média por Hectare:</label>
-                    <input type="number" id="produtividade" value="60">
-                </div>
-                <button onclick="calcularRetorno()" class="btn-primary">Calcular Estimativa</button>
-
-                <div id="resultado" class="resultado-box">
+            <div class="simulator-wrapper">
+                <div class="simulator-form">
+                    <div class="input-row">
+                        <div class="input-control">
+                            <label>Commodity de Foco</label>
+                            <select id="simCultura">
+                                <option value="140">Soja (Preço médio R$ 140,00/sc)</option>
+                                <option value="65">Milho (Preço médio R$ 65,00/sc)</option>
+                                <option value="230">Algodão (Preço médio R$ 230,00/ar)</option>
+                            </select>
+                        </div>
+                        <div class="input-control">
+                            <label>Área Operacional (Hectares)</label>
+                            <input type="number" id="simArea" value="500">
+                        </div>
                     </div>
+
+                    <div class="input-row">
+                        <div class="input-control">
+                            <label>Produtividade Estimada (Por Ha)</label>
+                            <input type="number" id="simProdutividade" value="70">
+                        </div>
+                        <div class="input-control">
+                            <label>Custo Operacional Total (R$ por Ha)</label>
+                            <input type="number" id="simCusto" value="5500" placeholder="Sementes, defensivos, diesel...">
+                        </div>
+                    </div>
+
+                    <button onclick="calcularRoiAvancado()" class="btn-glow block">Processar Análise de Viabilidade</button>
+                </div>
+
+                <div class="simulator-results" id="simResultados">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-calculator-combined"></i>
+                        <p>Insira os parâmetros ao lado para gerar o relatório financeiro.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 AgroEconomia Dashboard. Desenvolvido para portfólio GitHub.</p>
+        <p>&copy; 2026 AGROINTEL Terminal S.A. | Todos os dados são simulados para fins de portfólio.</p>
     </footer>
 
     <script src="script.js"></script>
