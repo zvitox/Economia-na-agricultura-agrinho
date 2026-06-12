@@ -85,4 +85,4 @@ function calcularRetorno() {
         <p style="font-size: 1.2rem; color: #2c5e3b;"><strong>Receita Bruta Estimada:</strong> R$ ${receitaBruta.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
         <small style="color: #666;">*Nota: Este é um cálculo hipotético e não desconta custos operacionais, frete e impostos.</small>
     `;
-            }
+}
